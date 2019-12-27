@@ -11,9 +11,9 @@
 - [License](#license)
 
 ## Database
-File: gym.sql
-Login: admin
-Password: admin
+- File: gym.sql
+- Login: admin
+- Password: admin
 
 ## Technologies
 - HTML5 
