@@ -19,7 +19,7 @@
 - HTML5 
 - CSS3 
 - PHP7
-- SQL
+- MariaDB
 
 ## Description
 Management system for the gym. Actually only for desktop.
