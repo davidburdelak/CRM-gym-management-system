@@ -15,8 +15,7 @@ if (isset($_REQUEST['member'])) {
 	
 	$user_check_query = "SELECT * FROM member WHERE mem_id='$mem_id' LIMIT 1";
 	$result = mysqli_query($conn, $user_check_query);
-	$user = mysqli_fetch_assoc($result);
-	
+	$user = mysqli_fetch_assoc($result);	
 	if ($user) { 
 		if ($user['mem_id'] === $mem_id) {
 			array_push($errors, "<div class='alert alert-warning'><b>ID already exists</b></div>");
