@@ -11,14 +11,12 @@ if (isset($_REQUEST['gym'])) {
 	
 	$user_check_query = "SELECT * FROM gym WHERE gym_id='$gym_id' LIMIT 1";
 	$result = mysqli_query($conn, $user_check_query);
-	$user = mysqli_fetch_assoc($result);
-	
+	$user = mysqli_fetch_assoc($result);	
 	if ($user) { 
 		if ($user['gym_id'] === $gym_id) {
 			array_push($errors, "<div class='alert alert-warning'><b>ID already exists</b></div>");
 		}
 	}
-
 	if (count($errors) == 0) {
   		$query = "INSERT INTO gym (gym_id,gym_name,address,type) 
           		VALUES('$gym_id','$name','$address','$type')";
