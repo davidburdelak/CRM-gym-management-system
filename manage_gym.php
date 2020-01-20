@@ -21,7 +21,7 @@
 			if (mysqli_num_rows($all_query) > 0) {
 				while($row = mysqli_fetch_assoc($all_query)) {
 					echo "<tr>";
-			echo "<td>".$row['gym_id']."</td>";
+					echo "<td>".$row['gym_id']."</td>";
 					echo "<td>".$row['gym_name']."</td>";
 					echo "<td>".$row['address']."</td>";
 					echo "<td>".$row['type']."</td>";
