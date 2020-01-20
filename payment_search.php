@@ -22,7 +22,7 @@ if (isset($_POST['id'])) {
 			echo "<td>".$row['pay_id']."</td>";
 			echo "<td>".$row['amount']."</td>";
 			echo "<td><a href='home.php?id=$row[pay_id]&info=update_payment'><i class='fas fa-pencil-alt'></i></a></td>";
-			echo  "<td><a href='home.php?id=$row[pay_id]&info=delete_payment'><i class='fas fa-trash-alt'></i></a></td>";
+			echo "<td><a href='home.php?id=$row[pay_id]&info=delete_payment'><i class='fas fa-trash-alt'></i></a></td>";
 		}
 	}
 	else {
