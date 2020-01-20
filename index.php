@@ -1,27 +1,25 @@
 <?php
+
 session_start();
 require('db.php');
 
 $username="";
 $errors = array(); 
 
-
 if (isset($_POST['login_user'])) {
-  $username = mysqli_real_escape_string($conn, $_POST['username']);
-  $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
-
-
-  if (count($errors) == 0) {
-    $query = "SELECT * FROM login WHERE uname='$username' AND pwd='$pwd'";
-    $results = mysqli_query($conn, $query);
-    if (mysqli_num_rows($results) == 1) {
-      $_SESSION['uname'] = $username;
-      header("location:home.php");
-    }else {
-      array_push($errors, "<div class='alert alert-warning'><b>Wrong username/password combination</b></div>");
-
-    }
-  }
+	$username = mysqli_real_escape_string($conn, $_POST['username']);
+	$pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
+	if (count($errors) == 0) {
+		$query = "SELECT * FROM login WHERE uname='$username' AND pwd='$pwd'";
+		$results = mysqli_query($conn, $query);
+		if (mysqli_num_rows($results) == 1) {
+			$_SESSION['uname'] = $username;
+			header("location:home.php");
+		}
+		else {
+			array_push($errors, "<div class='alert alert-warning'><b>Wrong username/password combination</b></div>");
+		}
+	}
 }
 
 ?>
@@ -32,8 +30,8 @@ if (isset($_POST['login_user'])) {
 
 	<title>Management System - GYM</title>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="robots" content="noydir">
 	<meta name="robots" content="noodp">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
